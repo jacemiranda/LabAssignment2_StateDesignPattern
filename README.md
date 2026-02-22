@@ -1,4 +1,4 @@
-# Lab Assignment: State Pattern
+# Lab Assignment 2 : State Desgin Pattern
 
 ## Problem:
 A vending machine needs to manage different states, including "Idle", "ItemSelected", "Dispensing", and "OutOfOrder". Each state has specific rules and restrictions regarding allowed operations, and the vending machine has associated attributes like item inventory and balance.
@@ -42,59 +42,4 @@ Implement the State Pattern to improve code maintainability and flexibility:
    * Delegate actions like `selectItem`, `insertCoin`, `dispenseItem`, and `setOutOfOrder` to the current state object through its corresponding methods.
 
 ## UML Diagram
-Below is the visual representation of the State Pattern implementation:
-
-```mermaid
-classDiagram
-    class VendingMachine {
-        -VendingMachineState currentState
-        -int inventory
-        -double balance
-        +setState(VendingMachineState state)
-        +selectItem()
-        +insertCoin()
-        +dispenseItem()
-        +setOutOfOrder()
-    }
-
-    class VendingMachineState {
-        <<interface>>
-        +selectItem(VendingMachine machine)
-        +insertCoin(VendingMachine machine)
-        +dispenseItem(VendingMachine machine)
-        +setOutOfOrder(VendingMachine machine)
-    }
-
-    class IdleState {
-        +selectItem(VendingMachine machine)
-        +insertCoin(VendingMachine machine)
-        +dispenseItem(VendingMachine machine)
-        +setOutOfOrder(VendingMachine machine)
-    }
-
-    class ItemSelectedState {
-        +selectItem(VendingMachine machine)
-        +insertCoin(VendingMachine machine)
-        +dispenseItem(VendingMachine machine)
-        +setOutOfOrder(VendingMachine machine)
-    }
-
-    class DispensingState {
-        +selectItem(VendingMachine machine)
-        +insertCoin(VendingMachine machine)
-        +dispenseItem(VendingMachine machine)
-        +setOutOfOrder(VendingMachine machine)
-    }
-
-    class OutOfOrderState {
-        +selectItem(VendingMachine machine)
-        +insertCoin(VendingMachine machine)
-        +dispenseItem(VendingMachine machine)
-        +setOutOfOrder(VendingMachine machine)
-    }
-
-    VendingMachineState <|.. IdleState
-    VendingMachineState <|.. ItemSelectedState
-    VendingMachineState <|.. DispensingState
-    VendingMachineState <|.. OutOfOrderState
-    VendingMachine --> VendingMachineState
+<img width="2048" height="1998" alt="LabAssignment2_StateDesignPattern" src="https://github.com/user-attachments/assets/cf5d5668-fd2e-4966-b334-a546714edcff" />
